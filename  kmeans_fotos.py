@@ -39,7 +39,7 @@ print(np.shape(X))
 print(np.shape(data))
 
 
-# In[ ]:
+# In[131]:
 
 
 n_max=20
@@ -79,11 +79,11 @@ plt.xlabel("N° of clusters")
 
 # # tomamos N° of clusters k=3
 
-# In[ ]:
+# In[139]:
 
 
 print(np.shape(rsd[:,0]))
-print(data_centered)
+a=data_centered.reshape((100,100,3,len(files[:m])))
 
 
 # In[130]:
@@ -96,12 +96,18 @@ for i in range(len(files[:m])):
 #30000*87
 
 
-# In[8]:
+# In[141]:
 
 
-# plt.figure(figsize=(10,5))
-# plt.subplot(1,2,1)
-# plt.imshow(data)
+print(np.shape(a[:,:,:,0]))
+
+
+# In[143]:
+
+
+plt.figure(figsize=(10,5))
+plt.subplot(1,2,1)
+plt.imshow(a[:,:,:,0])
 # plt.title("Original")
 
 # plt.subplot(1,2,2)
