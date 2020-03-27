@@ -56,7 +56,7 @@ for n_clusters in range(1,n_max):
         X_centered[ii,:] = k_means.cluster_centers_[i]
     data_centered = X_centered.reshape((30000,len(files[:m])))
 #inertia
-    if(n_clusters==3):
+    if(n_clusters==5):
         rsd=np.append(rsd,(X-data_centered)**2)
         rsd=rsd.reshape((30000,len(files[:m])))
     inertia=np.append(inertia,np.sum((X-data_centered)**2))
@@ -82,21 +82,31 @@ plt.xlabel("N° of clusters")
 # In[ ]:
 
 
-print(np.shape(rsd))
-30000*87
+print(np.shape(rsd[:,0]))
+print(data_centered)
+
+
+# In[130]:
+
+
+norm=[]
+for i in range(len(files[:m])):
+    norm=np.append(norm,np.sum(rsd[:,i]))
+#print(np.shape(rsd))
+#30000*87
 
 
 # In[8]:
 
 
-plt.figure(figsize=(10,5))
-plt.subplot(1,2,1)
-plt.imshow(data)
-plt.title("Original")
+# plt.figure(figsize=(10,5))
+# plt.subplot(1,2,1)
+# plt.imshow(data)
+# plt.title("Original")
 
-plt.subplot(1,2,2)
-plt.imshow(data_centered)
-plt.title("{} colores".format(n_clusters))
+# plt.subplot(1,2,2)
+# plt.imshow(data_centered)
+# plt.title("{} colores".format(n_clusters))
 
 
 # In[ ]:
