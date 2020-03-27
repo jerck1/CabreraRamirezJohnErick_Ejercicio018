@@ -86,14 +86,18 @@ print(np.shape(rsd[:,0]))
 a=data_centered.reshape((100,100,3,len(files[:m])))
 
 
-# In[130]:
+# In[147]:
 
 
 norm=[]
 for i in range(len(files[:m])):
     norm=np.append(norm,np.sum(rsd[:,i]))
+    
 #print(np.shape(rsd))
 #30000*87
+#for i in range(10):
+#    if(a[:,:,:,i].any==a[:,:,:,i+1].any):
+#        print(0)
 
 
 # In[141]:
@@ -102,12 +106,12 @@ for i in range(len(files[:m])):
 print(np.shape(a[:,:,:,0]))
 
 
-# In[143]:
+# In[146]:
 
 
 plt.figure(figsize=(10,5))
 plt.subplot(1,2,1)
-plt.imshow(a[:,:,:,0])
+plt.imshow(a[:,:,:,86])
 # plt.title("Original")
 
 # plt.subplot(1,2,2)
